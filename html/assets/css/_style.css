@@ -1,0 +1,210 @@
+body {
+  font-size: 100%; }
+  body .container {
+    min-height: 100vh; }
+  body.overflow .open-sidebar .js-toggle-left-slidebar .three-bars-icon span {
+    margin: -4px 0; }
+  body.overflow .open-sidebar .js-toggle-left-slidebar .three-bars-icon span:first-child {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg); }
+  body.overflow .open-sidebar .js-toggle-left-slidebar .three-bars-icon span:last-child {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg); }
+
+/* ------ Slidebar ------- */
+.aspectRatio {
+  position: relative; }
+  .aspectRatio.aspectRatio--100:before {
+    content: "";
+    display: block;
+    padding-top: 100%; }
+  .aspectRatio.aspectRatio--16-9:before {
+    content: "";
+    display: block;
+    padding-top: 56.25%; }
+
+.btn {
+  background-color: transparent;
+  color: black;
+  border: 1px solid #000;
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  transition: all ease 0.3s; }
+  .btn.btn-s {
+    font-size: 0.875em;
+    padding: 5px 10px; }
+  .btn.btn-m {
+    font-size: 1em;
+    padding: 10px 15px; }
+  .btn.btn-l {
+    font-size: 1em;
+    padding: 13px 20px; }
+  .btn:hover, .btn:focus {
+    outline: none;
+    opacity: 0.8;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: black;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+
+.close-slidebar span {
+  width: 50px;
+  height: 50px;
+  display: block;
+  float: right; }
+  .close-slidebar span img {
+    width: 100%; }
+
+.fk-layer {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: none; }
+  .fk-layer.active {
+    display: block; }
+
+.slidebar nav {
+  padding-top: 50px; }
+  .slidebar nav ul {
+    padding-left: 0; }
+    .slidebar nav ul li {
+      list-style-type: none; }
+      .slidebar nav ul li a {
+        display: block;
+        width: 100%;
+        color: white;
+        -webkit-transition: all ease 0.3s;
+        -o-transition: all ease 0.3s;
+        transition: all ease 0.3s; }
+        .slidebar nav ul li a:hover, .slidebar nav ul li a:focus {
+          cursor: pointer;
+          background-color: rgba(255, 255, 255, 0.2);
+          text-decoration: none; }
+        .slidebar nav ul li a.active {
+          background-color: rgba(255, 255, 255, 0.2); }
+
+/* ------ end : Slidebar ------- */
+/* ------ Header ------- */
+header .top-container .logo {
+  position: absolute;
+  top: 30px;
+  width: 100%;
+  left: 0; }
+  header .top-container .logo .wrap.align-center {
+    text-align: center; }
+  header .top-container .logo .wrap.align-right {
+    text-align: right; }
+  header .top-container .logo .wrap.align-left {
+    text-align: left; }
+  header .top-container .logo .wrap a {
+    display: inline-block; }
+  @media (min-width: 1024px) {
+    header .top-container .logo .wrap {
+      text-align: right !important; } }
+
+header .nav-pc-menu {
+  margin-top: 70px; }
+  header .nav-pc-menu ul {
+    padding-left: 0;
+    text-align: center; }
+    header .nav-pc-menu ul li {
+      list-style-type: none;
+      display: inline-block; }
+      header .nav-pc-menu ul li a {
+        padding: 20px 30px;
+        display: block;
+        color: #000; }
+        header .nav-pc-menu ul li a:hover {
+          text-decoration: none; }
+
+/* ------ end: Header ------- */
+/* ------ Page content ------- */
+.page-content {
+  padding: 100px 0; }
+
+/* ------ end: Page content ------- */
+/*------ modal ------- */
+.modal .modal-dialog {
+  position: absolute;
+  width: 90%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) !important;
+  -ms-transform: translate(-50%, -50%) !important;
+  transform: translate(-50%, -50%) !important;
+  margin: 0; }
+  .modal .modal-dialog .modal-content {
+    position: relative; }
+    .modal .modal-dialog .modal-content .close {
+      position: absolute;
+      left: 50%;
+      bottom: -50px;
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+      width: 50px;
+      height: 50px;
+      opacity: 1; }
+      @media (min-width: 1024px) {
+        .modal .modal-dialog .modal-content .close {
+          left: initial;
+          bottom: initial;
+          right: -10px;
+          -webkit-transform: translateX(0);
+          -ms-transform: translateX(0);
+          transform: translateX(0);
+          top: -50px; } }
+      .modal .modal-dialog .modal-content .close.white-close {
+        background: url("../images/close_white.png") top left no-repeat;
+        background-size: 100%; }
+      .modal .modal-dialog .modal-content .close.black-close {
+        background: url("../images/close_black.png") top left no-repeat;
+        background-size: 100%; }
+    .modal .modal-dialog .modal-content .modal-body h3 {
+      text-align: center;
+      font-size: 1.5em; }
+    .modal .modal-dialog .modal-content .modal-body p {
+      text-align: center; }
+
+.modal#login .modal-content .modal-body .wrap a, .modal#share .modal-content .modal-body .wrap a {
+  display: block;
+  border-radius: 50px;
+  position: relative;
+  max-width: 280px; }
+  .modal#login .modal-content .modal-body .wrap a:last-child, .modal#share .modal-content .modal-body .wrap a:last-child {
+    margin: 0 auto; }
+  .modal#login .modal-content .modal-body .wrap a.is-zalo:before, .modal#share .modal-content .modal-body .wrap a.is-zalo:before {
+    background: url("../images/logo-zalo@2x.png") center no-repeat;
+    background-size: 100%; }
+  .modal#login .modal-content .modal-body .wrap a.is-google:before, .modal#share .modal-content .modal-body .wrap a.is-google:before {
+    background: url("../images/logo-g+@2x.png") center no-repeat;
+    background-size: 100%; }
+  .modal#login .modal-content .modal-body .wrap a.is-facebook:before, .modal#share .modal-content .modal-body .wrap a.is-facebook:before {
+    background: url("../images/logo-fb@2x.png") center no-repeat;
+    background-size: 100%; }
+  .modal#login .modal-content .modal-body .wrap a.copy:before, .modal#share .modal-content .modal-body .wrap a.copy:before {
+    background: url("../images/copy-link.png") center no-repeat;
+    background-size: 100%; }
+  .modal#login .modal-content .modal-body .wrap a:before, .modal#share .modal-content .modal-body .wrap a:before {
+    width: 34px;
+    height: 26px;
+    display: block;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%); }
+
+/*------ end modal ------- */
+/*------- mansory  ------- */
+.mansory-isotop .container {
+  padding: 0; }
+
+/*------- end mansory  ------- */

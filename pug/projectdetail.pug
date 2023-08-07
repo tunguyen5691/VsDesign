@@ -1,0 +1,80 @@
+extends layout.pug
+
+//- Setting
+block setting
+	- var layout = true
+	- var header = false
+	- var footer = true
+	- var modal = true
+
+block head
+	include head.pug
+
+block pages_component
+	- body_class.push("projects detail")
+	- project_wrapper_class.push("project-layout")
+	- header_class.push("")
+	- main_content_class.push("page-content")
+	- footer_class.push("")
+
+block header
+	include component/header.pug
+
+block body
+	include component/_project_detail.pug
+
+block modal
+
+block footer
+	include component/footer.pug
+
+
+block javascript
+	include component/javascript.pug
+	script.
+
+		var tag = document.createElement("script");
+		tag.src = "https://www.youtube.com/iframe_api";
+		var firstScriptTag = document.getElementsByTagName("script")[0];
+		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+		var _youtube_id = document.getElementById("_youtube-iframe");
+
+		function onYouTubeIframeAPIReady() {
+			youtubePlayer = new YT.Player("_youtube-iframe", {
+				videoId: _youtube_id.dataset.youtubeurl,
+				playerVars: {
+					cc_load_policy: 0, // closed caption
+					controls: 0,
+					mute : 1,
+					disablekb: 0, //disable keyboard
+					iv_load_policy: 3, // annotations
+					playsinline: 1, // play inline on iOS
+					rel: 0, // related videos
+					showinfo: 0, // title
+					modestbranding: 3, // youtube logo
+					fs: 0,
+					showinfo: 0,
+					autoplay: 1,
+				},
+				events: {
+					onStateChange: onYoutubePlayerStateChange,
+				},
+			});
+		}
+
+		function onYoutubePlayerStateChange(event) {
+			if (event.data == YT.PlayerState.PLAYING) {
+			}
+			if (event.data == YT.PlayerState.PAUSED) {
+				$("#playvideo").fadeIn();
+			}
+			if (event.data == YT.PlayerState.ENDED) {
+				$("#playvideo").fadeIn();
+			}
+		}
+
+		$("#playvideo").click(function () {
+			youtubePlayer.playVideo();
+			$(this).fadeOut();
+		});

@@ -1,0 +1,34 @@
+extends layout.pug
+
+//- Setting
+block setting
+	- var layout = true
+	- var header = false
+	- var footer = true
+	- var modal = true
+
+block head
+	include head.pug
+
+block pages_component
+	- body_class.push("contact")
+	- project_wrapper_class.push("project-layout")
+	- header_class.push("")
+	- main_content_class.push("page-content")
+	- footer_class.push("")
+
+block header
+	include component/header.pug
+
+block body
+	include component/_contact.pug
+
+block modal
+
+block footer
+	include component/footer.pug
+
+
+block javascript
+	include component/javascript.pug
+	script.

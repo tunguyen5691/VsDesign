@@ -37,23 +37,12 @@ $(document).ready(function () {
             setTimeout(function () {
                 $(".loading").hide();
             }, 500);
-        }, 1000);
+        }, 1500);
     }
     loadingF();
-
-    var slideItem = $(".list .wrap img").width();
-    console.log("slideItem", slideItem);
-    var sliderWrap = slideItem * $(".list .wrap img").length;
-    console.log("sliderWrap", sliderWrap);
 });
 
 $(window).on("load", function () {
-    $("html, body").animate(
-        {
-            scrollTop: 0,
-        },
-        100
-    );
     initialScroll();
 });
 var initialScroll = function () {
@@ -70,6 +59,14 @@ var initialScroll = function () {
 
     // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
     locoScroll.on("scroll", ScrollTrigger.update);
+    locoScroll.on("scroll", (tc) => {
+        var scrollTop = tc.delta.y;
+        if (scrollTop > 50) {
+            $(".menu-bar").addClass("isScroll");
+        } else {
+            $(".menu-bar").removeClass("isScroll");
+        }
+    });
 
     // tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
     ScrollTrigger.scrollerProxy(".smooth-scroll", {
@@ -83,4 +80,5 @@ var initialScroll = function () {
         pinType: document.querySelector(".smooth-scroll").style.transform ? "transform" : "fixed",
     });
     new ResizeObserver(() => locoScroll.update()).observe(scrollContainer);
+    locoScroll.scrollTo(0, 0);
 };

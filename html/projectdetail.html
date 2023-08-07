@@ -23,47 +23,6 @@
   <body class="projects detail "> 
     <div class="loading">
       <div class="loading-wrap"><div class="load-wrapp">
-<div class="load-1">
-<p>Loading 1</p>
-<div class="line"></div>
-<div class="line"></div>
-<div class="line"></div>
-</div>
-</div>
-<div class="load-wrapp">
-<div class="load-2">
-<p>Loading 2</p>
-<div class="line"></div>
-<div class="line"></div>
-<div class="line"></div>
-</div>
-</div>
-<div class="load-wrapp">
-<div class="load-3">
-<p>Loading 3</p>
-<div class="line"></div>
-<div class="line"></div>
-<div class="line"></div>
-</div>
-</div>
-<div class="load-wrapp">
-<!-- Loading 4 don't work on firefox because of the border-radius and the "dashed" style. -->
-<div class="load-4">
-<p>Loading 4</p>
-<div class="ring-1"></div>
-</div>
-</div>
-<div class="load-wrapp">
-<div class="load-5">
-<p>Loading 5</p>
-<div class="ring-2">
-<div class="ball-holder">
-<div class="ball"></div>
-</div>
-</div>
-</div>
-</div>
-<div class="load-wrapp">
 <div class="load-6">
 <div class="letter-holder">
 <div class="l-1 letter">L</div>
@@ -76,36 +35,6 @@
 <div class="l-8 letter">.</div>
 <div class="l-9 letter">.</div>
 <div class="l-10 letter">.</div>
-</div>
-</div>
-</div>
-<div class="load-wrapp">
-<div class="load-7">
-<p>Loading 7</p>
-<div class="square-holder">
-<div class="square"></div>
-</div>
-</div>
-</div>
-<div class="load-wrapp">
-<div class="load-8">
-<p>Loading 8</p>
-<div class="line"></div>
-</div>
-</div>
-<div class="load-wrapp">
-<div class="load-9">
-<p>Loading 9</p>
-<div class="spinner">
-<div class="bubble-1"></div>
-<div class="bubble-2"></div>
-</div>
-</div>
-</div>
-<div class="load-wrapp">
-<div class="load-10">
-<p>Loading 10</p>
-<div class="bar"></div>
 </div>
 </div>
 </div>
@@ -157,6 +86,46 @@
             </div>
           </div>
         </section>
+        <section class="related">
+          <div class="content-w size-lg"> 
+            <div class="wrap"> 
+              <div class="title">Related projects </div>
+              <div class="slider">
+                 <div class="swiper mySwiper">
+<div class="swiper-wrapper">
+<div class="swiper-slide"> <a class="project-item" href="projectdetail.html"> 
+                  <div class="thumb"><span style="background-image: url('assets/images/thumb.jpg')"></span></div>
+                  <div class="meta"> 
+                    <div class="name">Hanorio </div>
+                    <div class="cate">Flavour and Flavorist </div></div>
+                  </div></a><div class="swiper-slide"> <a class="project-item" href="projectdetail.html"> 
+                  <div class="thumb"><span style="background-image: url('assets/images/thumb.jpg')"></span></div>
+                  <div class="meta"> 
+                    <div class="name">Hanorio </div>
+                    <div class="cate">Flavour and Flavorist </div></div>
+                  </div></a><div class="swiper-slide"> <a class="project-item" href="projectdetail.html"> 
+                  <div class="thumb"><span style="background-image: url('assets/images/thumb.jpg')"></span></div>
+                  <div class="meta"> 
+                    <div class="name">Hanorio </div>
+                    <div class="cate">Flavour and Flavorist </div></div>
+                  </div></a><div class="swiper-slide"> <a class="project-item" href="projectdetail.html"> 
+                  <div class="thumb"><span style="background-image: url('assets/images/thumb.jpg')"></span></div>
+                  <div class="meta"> 
+                    <div class="name">Hanorio </div>
+                    <div class="cate">Flavour and Flavorist </div></div>
+                  </div></a><div class="swiper-slide"> <a class="project-item" href="projectdetail.html"> 
+                  <div class="thumb"><span style="background-image: url('assets/images/thumb.jpg')"></span></div>
+                  <div class="meta"> 
+                    <div class="name">Hanorio </div>
+                    <div class="cate">Flavour and Flavorist </div></div>
+                  </div></a></div>
+</div>
+<div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
       <footer>
         <footer class="footer"> 
@@ -175,7 +144,7 @@
                 <div class="contact"> 
                   <ul> 
                     <li> <a href="#!">pro@visualsolutions.design</a></li>
-                    <li> <a href="">Instargram </a></li>
+                    <li> <a href="">Instagram </a></li>
                     <li> <a href="">Facebook</a></li>
                   </ul>
                 </div>
@@ -201,6 +170,7 @@
       <div class="wrap"> 
         <div class="v-line"> </div>
         <ul> 
+          <li> <a href="index.html">Home</a></li>
           <li> <a href="story.html">Story</a></li>
           <li> <a href="contact.html">Contact</a></li>
           <li> <a href="projects.html">Projects</a></li>
@@ -222,6 +192,16 @@
     <script src="assets/js/daterangepicker.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
+      var swiper = new Swiper(".mySwiper", {
+      	speed: 700,
+      	slidesPerView: 3,
+      	spaceBetween: 20,
+      	loop: true,
+      	navigation: {
+      		nextEl: ".swiper-button-next",
+      		prevEl: ".swiper-button-prev",
+      	},
+      });
       var tag = document.createElement("script");
       tag.src = "https://www.youtube.com/iframe_api";
       var firstScriptTag = document.getElementsByTagName("script")[0];

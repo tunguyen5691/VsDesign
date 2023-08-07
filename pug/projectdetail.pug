@@ -33,6 +33,16 @@ block javascript
 	include component/javascript.pug
 	script.
 
+		var swiper = new Swiper(".mySwiper", {
+			speed: 700,
+			slidesPerView: 3,
+			spaceBetween: 20,
+			loop: true,
+			navigation: {
+				nextEl: ".swiper-button-next",
+				prevEl: ".swiper-button-prev",
+			},
+		});
 		var tag = document.createElement("script");
 		tag.src = "https://www.youtube.com/iframe_api";
 		var firstScriptTag = document.getElementsByTagName("script")[0];

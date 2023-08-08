@@ -24,10 +24,17 @@ $(document).ready(function () {
     $(".menu-body li").removeClass("active");
     $(".menu-body li.contact").addClass("active");
   }
+
   if (currentURL.indexOf("projects") != -1) {
     pageTitle.html("Projects");
     $(".menu-body li").removeClass("active");
     $(".menu-body li.projects").addClass("active");
+
+    var hash = window.location.hash.replace("#", "");
+    $(".tab-panel .panel ").removeClass("active");
+    $(".tab-content .content ").removeClass("active");
+    $(".tab-panel ." + hash).addClass("active");
+    $("#" + hash).addClass("active");
   }
   if (currentURL.indexOf("projectdetail") != -1) {
     pageTitle.html("Project Detail");

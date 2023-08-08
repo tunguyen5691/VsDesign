@@ -1,84 +1,188 @@
 $(document).ready(function () {
-    $(".menu-bar .menu-icon").click(function () {
-        $(".menu-bar").toggleClass("active");
-        $(".menu-body").toggleClass("active");
-    });
+  $(".menu-bar .menu-icon").click(function () {
+    $(".menu-bar").toggleClass("active");
+    $(".menu-body").toggleClass("active");
+  });
 
-    $(".tab-panel .panel ").click(function () {
-        var target = $(this).data("tab");
-        $(".tab-panel .panel ").removeClass("active");
-        $(".tab-content .content ").removeClass("active");
-        $(this).addClass("active");
-        $("#" + target).addClass("active");
-    });
-
-    zoomImg();
-    function zoomImg() {
-        let zoom = $(".zoom");
-        let zoomImg = $(".zoomImg");
-        zoom.mousemove(function (e) {
-            zoomImg.css({ opacity: "1" });
-            let offset = zoom.offset();
-            var x = e.pageX - offset.left;
-            var y = e.pageY - offset.top;
-            var x_percent = (x / zoom.width()) * 100;
-            var y_percent = (y / zoom.height()) * 100;
-            zoomImg.css("--zoom-x", x_percent + "%");
-            zoomImg.css("--zoom-y", y_percent + "%");
-        });
-        zoom.mouseout(function (e) {
-            zoomImg.css({ opacity: "0" });
-        });
-    }
-
-    function loadingF() {
-        setTimeout(function () {
-            $(".loading").addClass("is-hide");
-            setTimeout(function () {
-                $(".loading").hide();
-            }, 500);
-        }, 1500);
-    }
-    loadingF();
+  $(".tab-panel .panel ").click(function () {
+    var target = $(this).data("tab");
+    $(".tab-panel .panel ").removeClass("active");
+    $(".tab-content .content ").removeClass("active");
+    $(this).addClass("active");
+    $("#" + target).addClass("active");
+  });
+  var pageTitle = $(".menu-bar .page-title");
+  var currentURL = window.location.href;
+  console.log("currentURL :>> ", currentURL);
+  if (currentURL.indexOf("story") != -1) {
+    pageTitle.html("Story");
+    $(".menu-body li").removeClass("active");
+    $(".menu-body li.story").addClass("active");
+  }
+  if (currentURL.indexOf("contact") != -1) {
+    pageTitle.html("Contact");
+    $(".menu-body li").removeClass("active");
+    $(".menu-body li.contact").addClass("active");
+  }
+  if (currentURL.indexOf("projects") != -1) {
+    pageTitle.html("Projects");
+    $(".menu-body li").removeClass("active");
+    $(".menu-body li.projects").addClass("active");
+  }
+  if (currentURL.indexOf("projectdetail") != -1) {
+    pageTitle.html("Project Detail");
+    $(".menu-body li").removeClass("active");
+    $(".menu-body li.projects").addClass("active");
+  }
+  if (currentURL.indexOf("index") != -1) {
+    pageTitle.html("Home");
+    $(".menu-body li").removeClass("active");
+    $(".menu-body li.home").addClass("active");
+  }
+  function loadingF() {
+    setTimeout(function () {
+      $(".loading").addClass("is-hide");
+      setTimeout(function () {
+        $(".loading").hide();
+        homeBanner.play();
+        detailS1.play();
+      }, 500);
+    }, 1500);
+  }
+  loadingF();
 });
 
 $(window).on("load", function () {
-    initialScroll();
+  initialScroll();
 });
 var initialScroll = function () {
-    gsap.registerPlugin(ScrollTrigger);
-    // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
-    let scrollContainer = document.querySelector(".smooth-scroll");
+  gsap.registerPlugin(ScrollTrigger);
+  // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
+  let scrollContainer = document.querySelector(".smooth-scroll");
 
-    const locoScroll = new LocomotiveScroll({
-        el: scrollContainer,
-        smooth: true,
-        multiplier: 0.6,
-        lerp: 0.1,
-    });
+  const locoScroll = new LocomotiveScroll({
+    el: scrollContainer,
+    smooth: true,
+    multiplier: 0.8,
+    lerp: 0.1,
+  });
 
-    // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
-    locoScroll.on("scroll", ScrollTrigger.update);
-    locoScroll.on("scroll", (tc) => {
-        var scrollTop = tc.delta.y;
-        if (scrollTop > 50) {
-            $(".menu-bar").addClass("isScroll");
-        } else {
-            $(".menu-bar").removeClass("isScroll");
-        }
-    });
+  // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
+  locoScroll.on("scroll", ScrollTrigger.update);
+  locoScroll.on("scroll", (tc) => {
+    var scrollTop = tc.delta.y;
+    if (scrollTop > 50) {
+      $(".menu-bar").addClass("isScroll");
+    } else {
+      $(".menu-bar").removeClass("isScroll");
+    }
+  });
 
-    // tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
-    ScrollTrigger.scrollerProxy(".smooth-scroll", {
-        scrollTop(value) {
-            return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-        }, // we don't have to define a scrollLeft because we're only scrolling vertically.
-        getBoundingClientRect() {
-            return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
-        },
-        // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
-        pinType: document.querySelector(".smooth-scroll").style.transform ? "transform" : "fixed",
-    });
-    new ResizeObserver(() => locoScroll.update()).observe(scrollContainer);
-    locoScroll.scrollTo(0, 0);
+  // tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
+  ScrollTrigger.scrollerProxy(".smooth-scroll", {
+    scrollTop(value) {
+      return arguments.length
+        ? locoScroll.scrollTo(value, 0, 0)
+        : locoScroll.scroll.instance.scroll.y;
+    }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+    getBoundingClientRect() {
+      return {
+        top: 0,
+        left: 0,
+        width: window.innerWidth,
+        height: window.innerHeight,
+      };
+    },
+    // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
+    pinType: document.querySelector(".smooth-scroll").style.transform
+      ? "transform"
+      : "fixed",
+  });
+  new ResizeObserver(() => locoScroll.update()).observe(scrollContainer);
+  locoScroll.scrollTo(0, 0);
+
+  var s2_2 = gsap.timeline({
+    paused: true,
+  });
+
+  s2_2.from(".footer  .anim", {
+    duration: 0.5,
+    alpha: 0,
+    x: 40,
+    stagger: 0.1,
+    ease: "power1.out()",
+  });
+  s2_2.from(
+    ".footer  .v-line",
+    {
+      duration: 0.8,
+      y: "-100%",
+
+      ease: "power1.out()",
+    },
+    "-=.6"
+  );
+
+  var tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".footer",
+      scroller: ".smooth-scroll",
+      //- scrub: true,
+      //- pin: true,
+      start: "0% 40%",
+      end: "+=100%",
+      onEnter: function () {
+        s2_2.play();
+      },
+      onEnterBack: function () {},
+    },
+  });
 };
+
+var homeBanner = gsap.timeline({
+  paused: true,
+});
+homeBanner
+  .from(
+    ".banner .bl-left  .img  ",
+    {
+      duration: 0.8,
+      alpha: 0,
+      scale: 0.5,
+
+      ease: "back.out(1.5)",
+    },
+    "-=.2"
+  )
+  .from(
+    " .banner .bl-left .v-line ",
+    { duration: 0.8, alpha: 0, height: 0, ease: "power1.out()" },
+    "-=.7"
+  )
+  .from(
+    " .banner .bl-right .anim",
+    { duration: 0.8, alpha: 0, stagger: 0.2, x: 100, ease: "back.out(1.5)" },
+    "-=.5"
+  );
+
+var detailS1 = gsap.timeline({
+  paused: true,
+});
+detailS1
+  .from(
+    ".detail .s1  .anim  ",
+    {
+      duration: 0.8,
+      alpha: 0,
+      y: 40,
+      stagger: 0.2,
+      ease: "back.out(1.5)",
+    },
+    "-=.4"
+  )
+
+  .from(
+    " .detail .s1 .v-line",
+    { duration: 0.8, height: 0, ease: "power1.out()" },
+    "-=.5"
+  );

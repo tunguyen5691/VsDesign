@@ -18,8 +18,6 @@ html(lang='en' class="desktop")
 	body(class=`${body_class} `)  
 		.loading()
 			.loading-wrap
-
-
 				<div class="load-wrapp">
 					<div class="load-6">
 						<div class="letter-holder">
@@ -58,17 +56,18 @@ html(lang='en' class="desktop")
 					span
 					span
 		.menu-body 
-			.wrap 
-				.v-line 
-				ul 
-					li 
-						a(href="index.html") Home
-					li 
-						a(href="story.html") Story
-					li 
-						a(href="contact.html") Contact
-					li 
-						a(href="projects.html") Projects
+			.content-w.size-lg
+				.wrap 
+					.v-line 
+					ul 
+						li.home.active 
+							a(href="index.html") Home
+						li.story 
+							a(href="story.html") Story
+						li.contact 
+							a(href="contact.html") Contact
+						li.projects 
+							a(href="projects.html") Projects
 		if modal 
 			block modal
 		.fk-layer

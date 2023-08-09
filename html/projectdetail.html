@@ -1,6 +1,6 @@
 
 <!-- ================= js ====================--><!DOCTYPE html>
-<html class="desktop" lang="en">
+<html class="overflow-hidden" lang="en">
   <head>
     <title>Project name</title>
     <meta charset="utf-8">
@@ -171,7 +171,7 @@
             <li class="home active"> <a href="index.html">Home</a></li>
             <li class="story"> <a href="story.html">Story</a></li>
             <li class="contact"> <a href="contact.html">Contact</a></li>
-            <li class="projects"> <a href="projects.html">Projects</a></li>
+            <li class="projects"> <a href="projects.html#branding">Projects</a></li>
           </ul>
         </div>
       </div>
@@ -191,6 +191,14 @@
       	slidesPerView: 3,
       	spaceBetween: 20,
       	loop: true,
+      	breakpoints: {
+      
+      		768: {
+      			slidesPerView: 2,
+      			spaceBetween: 20,
+      
+      		},
+      	},
       	navigation: {
       		nextEl: ".swiper-button-next",
       		prevEl: ".swiper-button-prev",

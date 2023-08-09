@@ -1,6 +1,6 @@
 
 <!-- ================= js ====================--><!DOCTYPE html>
-<html class="desktop" lang="en">
+<html class="overflow-hidden" lang="en">
   <head>
     <title>Project name</title>
     <meta charset="utf-8">
@@ -73,7 +73,7 @@
               </div>
             </div>
             <div class="block s2_2">
-              <div class="gallery"> <a class="item txt ani fadeInUp" href="projects.html#branding" data-scroll data-scroll-offset="20%"> <span class="ani scale" data-scroll data-scroll-offset="20%">Branding</span></a><a class="item img ani fadeInUp" href="projects.html#branding" data-scroll data-scroll-offset="20%"> <span style="background-image: url('assets/images/5.jpg')"></span></a><a class="item img ani fadeInUp" href="projects.html#digital" data-scroll data-scroll-offset="20%"> <span style="background-image: url('assets/images/4.jpg')"></span></a><a class="item txt ani fadeInUp" href="projects.html#digital" data-scroll data-scroll-offset="20%"> <span class="ani scale" data-scroll data-scroll-offset="20%">Digital Campaign</span></a><a class="item txt ani fadeInUp" href="projects.html#exhibition" data-scroll data-scroll-offset="20%"> <span class="ani scale" data-scroll data-scroll-offset="20%">Exhibition</span></a><a class="item img ani fadeInUp" href="projects.html#exhibition" data-scroll data-scroll-offset="20%"> <span style="background-image: url('assets/images/3.jpg')"></span></a></div>
+              <div class="gallery"> <a class="item txt ani fadeInUp" href="projects.html#branding" data-scroll data-scroll-offset="20%"> <span>Branding</span></a><a class="item img ani fadeInUp" href="projects.html#branding" data-scroll data-scroll-offset="20%"> <span style="background-image: url('assets/images/5.jpg')"></span></a><a class="item img ani fadeInUp" href="projects.html#digital" data-scroll data-scroll-offset="20%"> <span style="background-image: url('assets/images/4.jpg')"></span></a><a class="item txt ani fadeInUp" href="projects.html#digital" data-scroll data-scroll-offset="20%"> <span>Digital Campaign</span></a><a class="item txt ani fadeInUp" href="projects.html#exhibition" data-scroll data-scroll-offset="20%"> <span>Exhibition</span></a><a class="item img ani fadeInUp" href="projects.html#exhibition" data-scroll data-scroll-offset="20%"> <span style="background-image: url('assets/images/3.jpg')"></span></a></div>
               <div class="bl-action align-center"> 
                 <div class="action-w"> <a class="ani fadeInUp" href="projects.html" data-scroll data-scroll-offset="20%"><span>MORE PROJECTS </span></a></div>
               </div>
@@ -153,7 +153,7 @@
             <li class="home active"> <a href="index.html">Home</a></li>
             <li class="story"> <a href="story.html">Story</a></li>
             <li class="contact"> <a href="contact.html">Contact</a></li>
-            <li class="projects"> <a href="projects.html">Projects</a></li>
+            <li class="projects"> <a href="projects.html#branding">Projects</a></li>
           </ul>
         </div>
       </div>
@@ -174,6 +174,17 @@
       	spaceBetween: 40,
       	loop: true,
       	centeredSlides: true,
+      	breakpoints: {
+      		1024: {
+      			slidesPerView: 6,
+      			spaceBetween: 20
+      		},
+      		768: {
+      			slidesPerView: 2,
+      			spaceBetween: 20,
+      
+      		},
+      	},
       	autoplay: {
       		delay: 1000,
       		disableOnInteraction: false,

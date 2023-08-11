@@ -1,1 +1,0 @@
-$(document).ready(function(){var o=new slidebars;o.init(),$(".open-sidebar").on("click",function(e){e.stopPropagation(),o.open("slidebar"),$(".slidebar").addClass("open-slidebar")}),$(".close-slidebar").on("click",function(e){e.stopPropagation(),o.close("slidebar"),$(".slidebar").remove("open-slidebar")})});

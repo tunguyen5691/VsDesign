@@ -21,12 +21,15 @@ $(document).ready(function () {
   }
   if (currentURL.indexOf("contact") != -1) {
     pageTitle.html("Contact");
+    pageTitle.addClass("eventNone ");
+
     $(".menu-body li").removeClass("active");
     $(".menu-body li.contact").addClass("active");
   }
 
   if (currentURL.indexOf("projects") != -1) {
     pageTitle.html("Projects");
+    pageTitle.addClass("eventNone displayNone");
     $(".menu-body li").removeClass("active");
     $(".menu-body li.projects").addClass("active");
 
@@ -38,6 +41,8 @@ $(document).ready(function () {
   }
   if (currentURL.indexOf("projectdetail") != -1) {
     pageTitle.html("Project Detail");
+    pageTitle.addClass("eventNone");
+
     $(".menu-body li").removeClass("active");
     $(".menu-body li.projects").addClass("active");
   }

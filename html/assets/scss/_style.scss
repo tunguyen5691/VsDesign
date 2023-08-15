@@ -999,12 +999,17 @@ body {
   }
   .b1 {
     padding-top: 140px;
-
+    @media (width < 1024px) {
+      padding-top: 60px;
+    }
     .wrap {
       display: flex;
       flex-wrap: wrap;
       padding: 6vw 0px 40px;
       align-items: flex-end;
+      @media (width < 1024px) {
+        padding: 0vw 0px 40px;
+      }
       .bl-left {
         width: 70%;
         font-size: 1.25em;
@@ -1058,7 +1063,7 @@ body {
           margin-bottom: 40px;
         }
         .v-line {
-          height: 250%;
+          height: 90vh;
           bottom: 0;
           left: 0;
           z-index: 22;
@@ -1066,8 +1071,11 @@ body {
             display: none;
           }
         }
-        .img {
-          width: 60%;
+        .video {
+          width: 30vw;
+          @media (width < 1024px) {
+            width: 100%;
+          }
         }
       }
     }
@@ -1241,6 +1249,7 @@ body {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      animation: 20s infinite ease rotate;
     }
   }
 }

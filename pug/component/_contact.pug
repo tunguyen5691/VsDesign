@@ -22,7 +22,13 @@ section.s2
 
                 .bl.bl-right 
                     .v-line
-                    .img 
-                        img(src="assets/images/6.png" alt="")
+                    .video(data-scroll data-scroll-offset="20%" )
+                        .bl-video.e-fadeIn#video(data-scroll data-scroll-offset="20%").fadeIn.ani 
+                            .video-container.videoWrapperYoutube
+                                .coverVideo( id="playvideo")
+                                    //- .center-xy.text-center
+                                    //-     .btnPlay
+                                #_youtube-iframe-wrapper
+                                    #_youtube-iframe(data-youtubeurl="d0PxUE7DRjE")
 
 

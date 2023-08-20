@@ -6181,11 +6181,11 @@ body.overflow .open-sidebar .js-toggle-left-slidebar .three-bars-icon span:last-
 }
 .detail .gallery .wrap .layout.layout3 .l-row .item:nth-child(5) {
   aspect-ratio: 1039/650;
-  width: calc(60% - 5px);
+  width: calc(50% - 5px);
 }
 .detail .gallery .wrap .layout.layout3 .l-row .item:nth-child(6) {
-  aspect-ratio: 478/650;
-  width: calc(40% - 5px);
+  aspect-ratio: 756/650;
+  width: calc(50% - 5px);
 }
 .detail .related .wrap {
   border-top: 1px solid black;

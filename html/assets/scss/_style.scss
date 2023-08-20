@@ -463,6 +463,9 @@ body {
         }
         .slider {
           .swiper {
+            .swiper-wrapper {
+              align-items: center;
+            }
             img {
               width: 100%;
               display: block;

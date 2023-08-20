@@ -5343,7 +5343,6 @@ body.overflow .open-sidebar .js-toggle-left-slidebar .three-bars-icon span:last-
 @media (width < 1024px) {
   .menu-bar {
     padding: 20px 20px;
-    background: rgba(0, 0, 0, 0.8);
   }
 }
 .menu-bar.isScroll {
@@ -5544,6 +5543,11 @@ body.overflow .open-sidebar .js-toggle-left-slidebar .three-bars-icon span:last-
   }
 }
 
+@media (width < 1024px) {
+  .homepage .menu-bar {
+    background: rgba(0, 0, 0, 0.8);
+  }
+}
 .homepage section {
   position: relative;
   min-height: 100vh;
@@ -5861,11 +5865,6 @@ body.overflow .open-sidebar .js-toggle-left-slidebar .three-bars-icon span:last-
   font-weight: 500;
   text-align: center;
   margin-bottom: 40px;
-}
-@media (width < 768px) {
-  .homepage section.s2 .s2_3 label {
-    margin-bottom: 0;
-  }
 }
 .homepage section.s2 .s2_3 .slider .swiper img {
   width: 100%;
@@ -6270,6 +6269,10 @@ body.overflow .open-sidebar .js-toggle-left-slidebar .three-bars-icon span:last-
 .projects .s2 .tab-panel .panel.active, .projects .s2 .tab-panel .panel:hover {
   color: black;
   cursor: pointer;
+}
+.projects .s2 .tab-panel .panel a {
+  color: inherit;
+  text-decoration: none;
 }
 .projects .s2 .tab-content .content {
   display: none;

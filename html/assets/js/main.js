@@ -54,9 +54,8 @@ $(document).ready(function () {
     function loadingF() {
         setTimeout(function () {
             $(".loading").addClass("is-hide");
+            $("html").removeClass("overflow-hidden");
             setTimeout(function () {
-                $("html").removeClass("overflow-hidden");
-
                 $(".loading").hide();
                 homeBanner.play();
                 detailS1.play();
@@ -93,7 +92,10 @@ var initialScroll = function () {
             $(".menu-bar").removeClass("isScroll");
         }
     });
-
+    locoScroll.stop();
+    setTimeout(function () {
+        locoScroll.start();
+    }, 1000);
     // tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
     ScrollTrigger.scrollerProxy(".smooth-scroll", {
         scrollTop(value) {

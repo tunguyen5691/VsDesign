@@ -5301,6 +5301,7 @@ body .container .page-content {
   min-height: 100vh;
   max-width: 100%;
   padding: 0;
+  overflow: hidden;
 }
 body.overflow .open-sidebar .js-toggle-left-slidebar .three-bars-icon span {
   margin: -4px 0;
@@ -5909,7 +5910,7 @@ body.overflow .open-sidebar .js-toggle-left-slidebar .three-bars-icon span:last-
   }
 }
 .detail .s1 .meta .v-line {
-  height: 170%;
+  height: 180px;
   top: -140px;
   left: -60px;
 }
@@ -6696,8 +6697,14 @@ body.overflow .open-sidebar .js-toggle-left-slidebar .three-bars-icon span:last-
 }
 .menu-body.active .v-line {
   top: -60px;
-  left: 0%;
+  left: 10px;
   height: 60%;
+}
+@media (width < 768px) {
+  .menu-body.active .v-line {
+    left: 6px;
+    height: calc(100vh - 240px);
+  }
 }
 .menu-body.active ul li a {
   opacity: 1;
@@ -6785,7 +6792,7 @@ body.overflow .open-sidebar .js-toggle-left-slidebar .three-bars-icon span:last-
   position: relative;
   border-radius: 100%;
   overflow: hidden;
-  padding: 5px;
+  padding: 3px;
 }
 .loading .loading-wrap .logo {
   position: relative;
@@ -7002,7 +7009,7 @@ body.overflow .open-sidebar .js-toggle-left-slidebar .three-bars-icon span:last-
   font-size: 1.5em;
   list-style-type: none;
   margin-bottom: 16px;
-  font-weight: 500;
+  font-weight: 400;
   position: relative;
   line-height: 1;
 }
@@ -7045,7 +7052,7 @@ body.overflow .open-sidebar .js-toggle-left-slidebar .three-bars-icon span:last-
   color: white;
   text-decoration: none;
   font-size: 1.25em;
-  font-weight: 400;
+  font-weight: 300;
   margin: 8px 0;
   display: inline-block;
   -webkit-transition: all ease 0.5s;
@@ -7094,6 +7101,7 @@ body.overflow .open-sidebar .js-toggle-left-slidebar .three-bars-icon span:last-
 }
 .footer .wrap .bl-right .slogan {
   font-size: 1.375em;
+  font-weight: 300;
 }
 @media (width < 768px) {
   .footer .wrap .bl-right .slogan {
@@ -7107,7 +7115,7 @@ body.overflow .open-sidebar .js-toggle-left-slidebar .three-bars-icon span:last-
   width: 100%;
   text-align: center;
   font-size: 1.125em;
-  font-weight: 400;
+  font-weight: 300;
 }
 @media (width < 1024px) {
   .footer .wrap .bl-right .copy-right {

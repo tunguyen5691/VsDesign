@@ -6768,7 +6768,7 @@ body.overflow .open-sidebar .js-toggle-left-slidebar .three-bars-icon span:last-
 @media (width < 768px) {
   .menu-body.active .v-line {
     left: 6px;
-    height: calc(100vh - 260px);
+    height: calc(100vh - 280px);
   }
 }
 .menu-body.active ul li a {

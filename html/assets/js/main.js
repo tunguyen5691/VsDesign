@@ -81,8 +81,9 @@ var initialScroll = function () {
     multiplier: 0.8,
     lerp: 0.1,
   });
-
-  // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
+  // new ResizeObserver(() => locoScroll.update()).observe(
+  //   document.querySelector(".smooth-scroll")
+  // );
   locoScroll.on("scroll", ScrollTrigger.update);
   locoScroll.on("scroll", (tc) => {
     var scrollTop = tc.delta.y;

@@ -4,13 +4,13 @@ $(document).ready(function () {
     $(".menu-body").toggleClass("active");
   });
 
-  $(".tab-panel .panel ").click(function () {
-    var target = $(this).data("tab");
-    $(".tab-panel .panel ").removeClass("active");
-    $(".tab-content .content ").removeClass("active");
-    $(this).addClass("active");
-    $("#" + target).addClass("active");
-  });
+  // $(".tab-panel .panel ").click(function () {
+  //   var target = $(this).data("tab");
+  //   $(".tab-panel .panel ").removeClass("active");
+  //   $(".tab-content .content ").removeClass("active");
+  //   $(this).addClass("active");
+  //   $("#" + target).addClass("active");
+  // });
   var pageTitle = $(".menu-bar .page-title");
   var currentURL = window.location.href;
   console.log("currentURL :>> ", currentURL);
@@ -33,11 +33,11 @@ $(document).ready(function () {
     $(".menu-body li").removeClass("active");
     $(".menu-body li.projects").addClass("active");
 
-    var hash = window.location.hash.replace("#", "");
-    $(".tab-panel .panel ").removeClass("active");
-    $(".tab-content .content ").removeClass("active");
-    $(".tab-panel ." + hash).addClass("active");
-    $("#" + hash).addClass("active");
+    // var hash = window.location.hash.replace("#", "");
+    // $(".tab-panel .panel ").removeClass("active");
+    // $(".tab-content .content ").removeClass("active");
+    // $(".tab-panel ." + hash).addClass("active");
+    // $("#" + hash).addClass("active");
   }
   if (currentURL.indexOf("projectdetail") != -1) {
     pageTitle.html("Project Detail");

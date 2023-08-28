@@ -191,6 +191,21 @@ body {
       }
       @media (width < 1024px) {
         width: 100%;
+        position: relative;
+      }
+      .balloon {
+        display: none;
+        @media (width < 1024px) {
+          display: block;
+          position: absolute;
+          width: 50%;
+          left: 70%;
+          bottom: 0;
+          transform: translateY(25%);
+          img {
+            animation: balloon 10s ease-in-out infinite;
+          }
+        }
       }
     }
     .tagline {
@@ -213,8 +228,14 @@ body {
         font-size: 1.25em;
         font-weight: 300;
         line-height: 1.6;
+        @media (width < 1024px) {
+          padding-right: 30%;
+        }
         @media (width < 768px) {
           font-size: 1.125em;
+          br {
+            display: none;
+          }
         }
       }
     }
@@ -247,9 +268,7 @@ body {
           margin-bottom: 40px;
           padding-top: 40px;
         }
-        @media (width < 400px) {
-          padding-top: 60px;
-        }
+
         .wrap {
           display: flex;
           height: 100%;
@@ -263,6 +282,9 @@ body {
             .img {
               width: 80%;
               margin-top: -60px;
+              @media (width < 1024px) {
+                display: none;
+              }
               img {
                 animation: balloon 10s ease-in-out infinite;
               }
@@ -281,6 +303,9 @@ body {
                 font-size: 1.25em;
                 line-height: 1.6;
                 font-weight: 300;
+                @media (width < 768px) {
+                  font-size: 1.125em;
+                }
               }
             }
           }
@@ -296,6 +321,7 @@ body {
           @media (width < 768px) {
             display: flex;
             flex-wrap: wrap;
+            gap: 0;
           }
           .item {
             background-color: black;
@@ -380,43 +406,60 @@ body {
               padding: 0 10%;
               font-size: 1.25em;
               font-weight: 400;
+              @media (width < 768px) {
+                width: 100%;
+                padding: 0 20px;
+                font-size: 1.125em;
+              }
             }
             &:nth-child(1) {
               grid-column: 1 / span 1;
               aspect-ratio: 1;
               @media (width < 768px) {
-                aspect-ratio: 2 /1;
+                aspect-ratio: 7 /1;
+                order: 2;
+                margin-bottom: 7px;
               }
             }
             &:nth-child(2) {
               grid-column: 2 / span 2;
               aspect-ratio: 926.66/459.34;
+              @media (width< 768px) {
+                order: 1;
+              }
             }
             &:nth-child(3) {
               grid-column: 1 / span 2;
               aspect-ratio: 926.66/459.34;
               @media (width < 768px) {
-                order: 4;
+                order: 3;
               }
             }
             &:nth-child(4) {
               grid-column: 3 / span 1;
               aspect-ratio: 1;
               @media (width < 768px) {
-                aspect-ratio: 2 /1;
-                order: 3;
+                aspect-ratio: 7 /1;
+                margin-bottom: 7px;
+
+                order: 5;
               }
             }
             &:nth-child(5) {
               grid-column: 1 / span 1;
               aspect-ratio: 1;
               @media (width < 768px) {
-                aspect-ratio: 2 /1;
+                aspect-ratio: 7 /1;
+
+                order: 6;
               }
             }
             &:nth-child(6) {
               grid-column: 2 / span 2;
               aspect-ratio: 926.66/459.34;
+              @media (width < 768px) {
+                order: 5;
+              }
             }
           }
         }
@@ -427,7 +470,7 @@ body {
           margin: 0 auto;
           @media (width < 1024px) {
             width: 100%;
-            padding: 60px 0 20px;
+            padding: 60px 0;
           }
           p {
             font-size: 1.5em;
@@ -450,7 +493,7 @@ body {
         margin-top: -1px;
         min-height: auto;
         @media (width < 768px) {
-          padding: 40px 0;
+          display: none;
         }
 
         .content-w {
@@ -515,7 +558,7 @@ body {
       margin-left: auto;
       position: relative;
       @media (width < 1024px) {
-        width: calc(100% - 40px);
+        width: 100%;
       }
       .v-line {
         height: 166px;
@@ -523,6 +566,7 @@ body {
         left: -60px;
         @media (width < 1024px) {
           left: -20px;
+          display: none;
         }
       }
       &-head {
@@ -817,6 +861,7 @@ body {
             flex-wrap: wrap;
             width: calc(100% + 30px);
             margin-left: -15px;
+            min-height: 550px;
             .project-item {
               width: calc(33.33% - 20px);
               margin: 0 10px 60px;
@@ -1159,7 +1204,7 @@ body {
       height: calc(100vh - 360px);
       @media (width < 768px) {
         left: 6px;
-        height: calc(100vh - 220px);
+        height: calc(100vh - 260px);
       }
     }
     ul {
@@ -1385,13 +1430,14 @@ body {
   @media (width < 1360px) {
     height: 600px;
   }
+
   @media (width < 1360px) {
     height: 600px;
-    @media (width < 1360px) {
-      padding: 60px 20px;
-    }
   }
-
+  @media (width < 768px) {
+    padding: 60px 20px;
+    height: auto;
+  }
   .content-w {
     height: 100%;
   }
@@ -1400,7 +1446,22 @@ body {
     flex-wrap: wrap;
     height: 100%;
     position: relative;
-
+    .mb {
+      display: none;
+      @media (width < 768px) {
+        display: block;
+        font-size: 1.25em;
+        font-weight: 300;
+        span {
+          display: block;
+          width: 100%;
+          margin-bottom: 8px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
     .bl-left {
       width: 30%;
       display: flex;
@@ -1415,6 +1476,9 @@ body {
         margin-top: 40px;
         @media (width < 1360px) {
           margin-top: 0;
+        }
+        @media (width < 768px) {
+          display: none;
         }
         ul {
           padding: 0;
@@ -1454,11 +1518,25 @@ body {
         }
       }
       .contact {
+        @media (width < 768px) {
+          padding: 40px 0;
+        }
         ul {
           padding: 0;
           margin: 0;
+          @media (width < 768px) {
+            display: flex;
+            flex-wrap: wrap;
+          }
           li {
             list-style-type: none;
+            @media (width < 768px) {
+              padding-right: 20px;
+              &:first-child {
+                width: 100%;
+                order: 3;
+              }
+            }
             a {
               color: white;
               text-decoration: none;
@@ -1503,7 +1581,7 @@ body {
         font-size: 1.375em;
         font-weight: 300;
         @media (width < 768px) {
-          margin-bottom: 40px;
+          display: none;
         }
       }
       .copy-right {

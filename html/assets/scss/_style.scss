@@ -81,7 +81,7 @@ body {
 
   .page-title {
     font-size: 2em;
-    font-weight: 500;
+    font-weight: 400;
     color: white;
     transition: all ease 0.5s 0.2s;
     text-decoration: none;
@@ -379,7 +379,7 @@ body {
               color: white;
               padding: 0 10%;
               font-size: 1.25em;
-              font-weight: 500;
+              font-weight: 400;
             }
             &:nth-child(1) {
               grid-column: 1 / span 1;
@@ -518,7 +518,7 @@ body {
         width: calc(100% - 40px);
       }
       .v-line {
-        height: 180px;
+        height: 166px;
         top: -140px;
         left: -60px;
         @media (width < 1024px) {
@@ -1156,10 +1156,10 @@ body {
     .v-line {
       top: -60px;
       left: 10px;
-      height: 60%;
+      height: calc(100vh - 360px);
       @media (width < 768px) {
         left: 6px;
-        height: calc(100vh - 240px);
+        height: calc(100vh - 220px);
       }
     }
     ul {
